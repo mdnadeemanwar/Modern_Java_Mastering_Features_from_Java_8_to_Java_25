@@ -1,6 +1,7 @@
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class findUniqueImperativeanDeclarative {
     public static void main(String[] args) {
@@ -23,7 +24,8 @@ public class findUniqueImperativeanDeclarative {
 
         //Declarative Approach
 
-
+       List<Integer> response = intList.stream().distinct().collect(Collectors.toList());
+        System.out.println("Remove duplicate is with declrative approach "+ response);
 
     }
 }
