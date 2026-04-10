@@ -26,7 +26,12 @@ public class ComperatorLambdaExample {
         //After java 8
 
         Comparator<Integer> comparator1 = (Integer a, Integer b)->a.compareTo(b);
-        System.out.println("using comperator using the lambda expression "+comparator1.compare(3,2));
+        System.out.println("using comperator using the lambda expression1 ->"+comparator1.compare(3,2));
+
+
+        Comparator<Integer> comparator2 = ( a,  b)->a.compareTo(b);
+        System.out.println("using comperator using the lambda expression2 ->"+comparator2.compare(3,2));
+
 
     }
 
