@@ -31,6 +31,9 @@ public class RunnableLambdaExample {
         new Thread(runlambda1).run();
 
 
+        //you can also create by this way
+        new Thread(()-> System.out.println("This is more short hand way to write lambda fun ")).start();
+
 
     }
 
