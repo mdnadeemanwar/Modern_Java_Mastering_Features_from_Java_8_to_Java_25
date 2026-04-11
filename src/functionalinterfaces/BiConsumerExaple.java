@@ -8,16 +8,18 @@ import java.util.function.BiConsumer;
 
 public class BiConsumerExaple {
 
-    public static void nameAndActivity(){
+    public static void nameAndActivity() {
 
         //now create a bi-consumer here
-        BiConsumer<String,List<String>> studentbiconsumer = (name,activities)->{
+        BiConsumer<String, List<String>> studentbiconsumer = (name, activities) -> {
             System.out.println(name + ":" + activities);
         };
 
         List<Student> studentList = StudentDataBase.getAllStudents();
 
-        studentList.forEach(student -> {studentbiconsumer.accept(student.getName(),student.getActivities());});
+        studentList.forEach(student -> {
+            studentbiconsumer.accept(student.getName(), student.getActivities());
+        });
     }
 
     public static void main(String[] args) {
@@ -29,12 +31,10 @@ public class BiConsumerExaple {
         biConsumer.accept("raman", "sohan");
 
         //now performing for multiply task
-        BiConsumer<Integer,Integer> mul = (a,b)->{
-            System.out.println("Multiplication is " +(a+b));
+        BiConsumer<Integer, Integer> mul = (a, b) -> {
+            System.out.println("Multiplication is " + (a + b));
         };
-        mul.accept(4,8);
-
-
+        mul.accept(4, 8);
 
         //here i will call the bi-consumer
         nameAndActivity();
