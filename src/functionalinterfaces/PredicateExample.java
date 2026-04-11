@@ -14,6 +14,9 @@ public class PredicateExample {
     public static void predicateOR(){
         System.out.println(p2.or(p5).test(10));
     }
+    public static void predicateNegate(){
+        System.out.println(p2.or(p5).negate().test(10));
+    }
 
     public static void main(String[] args) {
 
@@ -21,5 +24,6 @@ public class PredicateExample {
         System.out.println(p2.test(4));
         predicateAnd();
         predicateOR();
+        predicateNegate(); //it will reverse the output
     }
 }
