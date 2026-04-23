@@ -22,7 +22,21 @@ public class streamExample {
                 .collect(Collectors.toMap(Student::getName, Student::getActivities));
 
 
-        System.out.println("Details are->" + studentDetails);
+//        System.out.println("Details are->" + studentDetails);
+
+        //Now lets debug the  Stream with peek method
+        Map<String, List<String>> studentDetails1 = StudentDataBase.getAllStudents()
+                .stream()
+                .peek(student-> System.out.println(student))
+                .filter(studentFilterGradeLevel)
+                .peek(student-> System.out.println("filtered Grade Student"+student))
+                .filter(studentFilterGpaLevel)
+                .peek(student-> System.out.println("filtered GPA Student"+student))
+                .collect(Collectors.toMap(Student::getName, Student::getActivities));
+
+
+        System.out.println("Details are->" + studentDetails1);
+
     }
 
 }
