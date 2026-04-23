@@ -13,9 +13,9 @@ public class PredicateAndConsumerExample {
 
 
     //first create predicate
-    Predicate<Student> p1 = (s) -> s.getGradeLevel() >= 3;
+  static   Predicate<Student> p1 = (s) -> s.getGradeLevel() >= 3;
 
-    Predicate<Student> p2 = (s) -> s.getGpa() >= 3.9;
+   static Predicate<Student> p2 = (s) -> s.getGpa() >= 3.9;
 
     //creating a bipredicate here
     BiPredicate<Integer,Double> biPredicate = (gradeLevel,gpa)->gradeLevel>=3 && gpa>=3.9;
