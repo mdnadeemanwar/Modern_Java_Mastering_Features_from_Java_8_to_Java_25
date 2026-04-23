@@ -11,5 +11,6 @@ public class FunctionMethodReference {
 
         System.out.println(toUpperCaseLambda.apply("hello"));
         System.out.println(toUpperMethodReference.apply("helloNadeem"));
+
     }
 }
