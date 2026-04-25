@@ -11,13 +11,10 @@ import java.util.stream.Stream;
 public class StreamReduceExample {
 
     public static Optional<Student> getHeightGPAResult() {
-        return StudentDataBase.getAllStudents().stream().reduce((s1, s2) -> {
-            if (s1.getGpa() > s2.getGpa()) {
-                return s1;
-            } else {
-                return s2;
-            }
-        });
+        return StudentDataBase
+                .getAllStudents()
+                .stream()
+                .reduce((s1, s2) -> (s1.getGpa() > s2.getGpa()) ? s1 : s2);
     }
 
 
@@ -32,7 +29,7 @@ public class StreamReduceExample {
         //Exp - I want heighest gpa student with the help of reduce
 
         Optional<Student> result = getHeightGPAResult();
-        if(result.isPresent()) {
+        if (result.isPresent()) {
             System.out.println(result.get());
         }
 
