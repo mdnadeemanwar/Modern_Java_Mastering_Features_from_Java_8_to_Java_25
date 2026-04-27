@@ -37,6 +37,7 @@ public class streamExample {
 
         System.out.println("Details are->" + studentDetails1);
 
+
     }
 
 }
