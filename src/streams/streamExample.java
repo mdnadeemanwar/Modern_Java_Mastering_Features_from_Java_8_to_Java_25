@@ -17,8 +17,11 @@ public class streamExample {
 
         Map<String, List<String>> studentDetails = StudentDataBase.getAllStudents()
                 .stream()
+                .peek(student -> System.out.println("Student details first phase: " + student))
                 .filter(studentFilterGradeLevel)
+                .peek(student -> System.out.println("Student details second phase : " + student))
                 .filter(studentFilterGpaLevel)
+                .peek(student -> System.out.println("Student details Third phase: " + student))
                 .collect(Collectors.toMap(Student::getName, Student::getActivities));
 
 
@@ -33,6 +36,7 @@ public class streamExample {
                 .filter(studentFilterGpaLevel)
                 .peek(student-> System.out.println("filtered GPA Student"+student))
                 .collect(Collectors.toMap(Student::getName, Student::getActivities));
+
 
 
         System.out.println("Details are->" + studentDetails1);
