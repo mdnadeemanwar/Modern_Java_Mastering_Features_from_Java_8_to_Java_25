@@ -28,8 +28,24 @@ public class StreamGroupByExample {
                 .collect(groupingBy(student->student.getGpa()>3.9?"Outstadning":"Average"));
         System.out.println(newStudent);
     }
+    public static void twoLevelGrouping(){
+      Map<Integer,Map<String,List<Student>>> newStudent  =   StudentDataBase
+                .getAllStudents()
+                .stream()
+                .collect(groupingBy(Student::getGradeLevel,
+                        groupingBy(student->student.getGpa()>3.9?"Outstanding":"Average")));
+
+      System.out.println(newStudent);
+    }
+
+
+
+
     public static void main(String[] args) {
          countTheNoOfMenAndWomen();
         countTheNoOfStudentAverageAndOutstanding();
+
+        //2 lavel mapping
+        twoLevelGrouping();
     }
 }
