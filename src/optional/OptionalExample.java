@@ -30,9 +30,13 @@ public class OptionalExample {
 
     public static Optional<String> getStudentNameOptional() {
 
-        Optional<Student> studentOptional = Optional.ofNullable(StudentDataBase.getAllStudents().getFirst());
+//        Optional<Student> studentOptional = Optional.ofNullable(StudentDataBase.getAllStudents().getFirst());
+        Optional<Student> studentOptional = Optional.ofNullable(null);
+        if (studentOptional.isPresent()) {
+            return Optional.of(studentOptional.get().getName());
+        }
 
-        return studentOptional.map(Student::getName);
+        return Optional.empty();
 
     }
 
@@ -46,6 +50,8 @@ public class OptionalExample {
         Optional<String> name = getStudentNameOptional();
         if (name.isPresent()) {
             System.out.println(name.get());
+        }else{
+            System.out.println("Name not found");
         }
 
 //        System.out.println(getStudentNameOptional());
