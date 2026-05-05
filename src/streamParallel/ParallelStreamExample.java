@@ -28,6 +28,9 @@ public class ParallelStreamExample {
 
     public static void main(String[] args) {
 
+        //check the processor of the system
+        System.out.println(Runtime.getRuntime().availableProcessors());
+
 //        List<Integer> list = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
 //        //Give me one normal stream example
 //
