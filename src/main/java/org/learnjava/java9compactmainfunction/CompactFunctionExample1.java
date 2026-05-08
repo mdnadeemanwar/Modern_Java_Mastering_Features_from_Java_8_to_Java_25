@@ -1,4 +1,4 @@
-package java9compactmainfunction;
+package org.learnjava.java9compactmainfunction;
 
 import java.util.List;
 import java.util.Map;

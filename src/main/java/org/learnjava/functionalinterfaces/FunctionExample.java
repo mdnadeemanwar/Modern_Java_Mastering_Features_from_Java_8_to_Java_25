@@ -1,4 +1,4 @@
-package functionalinterfaces;
+package org.learnjava.functionalinterfaces;
 
 import java.util.function.Function;
 

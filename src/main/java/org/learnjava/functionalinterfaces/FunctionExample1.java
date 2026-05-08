@@ -1,4 +1,4 @@
-package functionalinterfaces;
+package org.learnjava.functionalinterfaces;
 
 public class FunctionExample1 {
     public static String performConcatString(String str){

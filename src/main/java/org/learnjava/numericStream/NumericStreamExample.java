@@ -1,4 +1,4 @@
-package numericStream;
+package org.learnjava.numericStream;
 
 import java.util.Arrays;
 import java.util.List;

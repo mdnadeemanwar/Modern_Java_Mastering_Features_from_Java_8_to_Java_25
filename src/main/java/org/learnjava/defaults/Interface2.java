@@ -1,4 +1,4 @@
-package defaults;
+package org.learnjava.defaults;
 
 public interface Interface2 {
     default void method2(){

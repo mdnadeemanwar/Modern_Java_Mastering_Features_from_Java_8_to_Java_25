@@ -1,4 +1,4 @@
-package methodReference;
+package org.learnjava.methodReference;
 
 import java.util.function.Function;
 

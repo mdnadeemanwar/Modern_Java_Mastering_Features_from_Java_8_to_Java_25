@@ -1,4 +1,4 @@
-package lambdas.justPractice;
+package org.learnjava.lambdas.justPractice;
 
 import java.sql.SQLOutput;
 import java.util.*;

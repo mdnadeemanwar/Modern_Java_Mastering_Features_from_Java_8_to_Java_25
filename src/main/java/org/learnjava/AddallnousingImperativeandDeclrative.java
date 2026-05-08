@@ -1,3 +1,5 @@
+package org.learnjava;
+
 import java.util.stream.IntStream;
 
 public class AddallnousingImperativeandDeclrative {

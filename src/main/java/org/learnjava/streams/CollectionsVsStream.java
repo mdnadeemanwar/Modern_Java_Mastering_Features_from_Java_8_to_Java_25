@@ -1,4 +1,4 @@
-package streams;
+package org.learnjava.streams;
 
 import java.util.ArrayList;
 import java.util.List;

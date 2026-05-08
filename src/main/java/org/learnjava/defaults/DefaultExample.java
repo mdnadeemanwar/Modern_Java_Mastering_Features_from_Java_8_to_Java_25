@@ -1,4 +1,4 @@
-package defaults;
+package org.learnjava.defaults;
 
 import java.util.Arrays;
 import java.util.Collections;

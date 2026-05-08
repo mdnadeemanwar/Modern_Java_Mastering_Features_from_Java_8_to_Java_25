@@ -1,4 +1,4 @@
-package java17EnhancedSwitch;
+package org.learnjava.java17EnhancedSwitch;
 
 import java.time.Month;
 import java.time.Year;

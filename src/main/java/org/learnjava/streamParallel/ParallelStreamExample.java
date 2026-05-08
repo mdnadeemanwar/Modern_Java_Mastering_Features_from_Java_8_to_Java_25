@@ -1,4 +1,4 @@
-package streamParallel;
+package org.learnjava.streamParallel;
 
 import java.util.Arrays;
 import java.util.List;

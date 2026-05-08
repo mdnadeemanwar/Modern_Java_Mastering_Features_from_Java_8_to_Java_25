@@ -34,7 +34,7 @@
 //}
 
 
-package java17RecordClasses;
+package org.learnjava.java17RecordClasses;
 
 import org.testng.annotations.Test;
 

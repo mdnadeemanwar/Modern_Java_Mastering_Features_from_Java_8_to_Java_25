@@ -1,6 +1,7 @@
-package streamTerminalOperation;
+package org.learnjava.streamTerminalOperation;
 
-import data.StudentDataBase;
+import org.learnjava.data.Student;
+import org.learnjava.data.StudentDataBase;
 
 import java.util.Collections;
 import java.util.stream.Collector;

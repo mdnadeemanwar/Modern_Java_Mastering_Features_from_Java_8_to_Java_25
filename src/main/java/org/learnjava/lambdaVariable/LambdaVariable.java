@@ -1,4 +1,4 @@
-package lambdaVariable;
+package org.learnjava.lambdaVariable;
 
 import java.util.Comparator;
 import java.util.function.Consumer;

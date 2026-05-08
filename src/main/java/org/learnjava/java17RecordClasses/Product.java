@@ -29,7 +29,7 @@
 //}
 
 
-package java17RecordClasses;
+package org.learnjava.java17RecordClasses;
 
 import java.math.BigDecimal;
 

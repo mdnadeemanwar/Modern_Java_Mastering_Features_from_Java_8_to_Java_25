@@ -1,4 +1,4 @@
-package defaults;
+package org.learnjava.defaults;
 
 public class InterfaceImpl implements Interface1, Interface2, Interface3 {
 

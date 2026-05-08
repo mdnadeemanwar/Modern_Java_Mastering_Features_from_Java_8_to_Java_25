@@ -1,4 +1,4 @@
-package defaults;
+package org.learnjava.defaults;
 
 public interface Interface3 {
     default void method3(){

@@ -1,7 +1,7 @@
-package streamTerminalOperation;
+package org.learnjava.streamTerminalOperation;
 
-import data.Student;
-import data.StudentDataBase;
+import org.learnjava.data.Student;
+import org.learnjava.data.StudentDataBase;
 
 import java.util.List;
 import java.util.Map;

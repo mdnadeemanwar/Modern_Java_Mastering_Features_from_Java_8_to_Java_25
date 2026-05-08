@@ -1,4 +1,4 @@
-package defaults;
+package org.learnjava.defaults;
 
 public class ClientImplInterface1Interface4 implements Interface1, Interface4 {
 

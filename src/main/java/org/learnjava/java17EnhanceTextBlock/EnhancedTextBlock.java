@@ -1,4 +1,4 @@
-package java17EnhanceTextBlock;
+package org.learnjava.java17EnhanceTextBlock;
 
 public class EnhancedTextBlock {
 

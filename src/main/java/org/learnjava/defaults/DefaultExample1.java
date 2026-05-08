@@ -1,13 +1,16 @@
-package defaults;
+package org.learnjava.defaults;
 
-import data.Student;
-import data.StudentDataBase;
+
+import org.learnjava.data.Student;
+import org.learnjava.data.StudentDataBase;
 
 import java.util.Comparator;
 import java.util.List;
 import java.util.function.Consumer;
 
 public class DefaultExample1 {
+
+
 
     public static Consumer<Student> nameConsumer = name -> System.out.println("Name is " + name);
     public static Comparator<Student> studentNameComperator = Comparator.comparing(Student::getName);

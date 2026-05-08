@@ -1,7 +1,7 @@
-package methodReference;
+package org.learnjava.methodReference;
 
-import data.Student;
-import data.StudentDataBase;
+import org.learnjava.data.Student;
+import org.learnjava.data.StudentDataBase;
 
 import java.util.function.Consumer;
 

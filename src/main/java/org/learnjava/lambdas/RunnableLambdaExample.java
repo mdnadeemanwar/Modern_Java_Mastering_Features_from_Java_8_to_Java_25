@@ -1,4 +1,4 @@
-package lambdas;
+package org.learnjava.lambdas;
 
 public class RunnableLambdaExample {
 

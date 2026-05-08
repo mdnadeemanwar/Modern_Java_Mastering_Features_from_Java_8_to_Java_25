@@ -1,4 +1,4 @@
-package streams;
+package org.learnjava.streams;
 
 import java.sql.SQLOutput;
 import java.util.stream.Stream;

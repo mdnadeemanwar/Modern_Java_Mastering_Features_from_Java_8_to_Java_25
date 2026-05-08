@@ -1,7 +1,7 @@
-package streamParallel;
+package org.learnjava.streamParallel;
 
-import data.Student;
-import data.StudentDataBase;
+import org.learnjava.data.Student;
+import org.learnjava.data.StudentDataBase;
 
 import java.util.ArrayList;
 import java.util.List;

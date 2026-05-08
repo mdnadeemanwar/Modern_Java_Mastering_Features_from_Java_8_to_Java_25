@@ -1,4 +1,4 @@
-package java9compactmainfunction;
+package org.learnjava.java9compactmainfunction;
 
 public class CompactMainFunctionExample {
      public static void main(String[] args) {

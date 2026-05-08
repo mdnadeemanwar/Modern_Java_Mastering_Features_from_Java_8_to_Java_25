@@ -1,13 +1,14 @@
-package functionalinterfaces;
+package org.learnjava.functionalinterfaces;
 
-import data.Student;
-import data.StudentDataBase;
+import org.learnjava.data.Student;
+import org.learnjava.data.StudentDataBase;
 
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.function.BiFunction;
 import java.util.function.Predicate;
+
 
 public class BiFunctionExample {
 

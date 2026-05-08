@@ -1,4 +1,4 @@
-package data;
+package org.learnjava.data;
 
 import java.util.Arrays;
 import java.util.List;

@@ -1,8 +1,7 @@
-package streams;
+package org.learnjava.streams;
 
-import data.Student;
-import data.StudentDataBase;
-
+import org.learnjava.data.Student;
+import org.learnjava.data.StudentDataBase;
 import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;

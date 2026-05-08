@@ -1,7 +1,7 @@
-package streams;
+package org.learnjava.streams;
 
-import data.Student;
-import data.StudentDataBase;
+import org.learnjava.data.Student;
+import org.learnjava.data.StudentDataBase;
 
 public class StreamMatchExample {
 

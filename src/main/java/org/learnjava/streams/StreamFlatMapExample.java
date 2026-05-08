@@ -1,11 +1,10 @@
-package streams;
+package org.learnjava.streams;
 
-import data.Student;
-import data.StudentDataBase;
+import org.learnjava.data.Student;
+import org.learnjava.data.StudentDataBase;
 
 import java.util.List;
 
-import static data.StudentDataBase.getAllStudents;
 import static java.util.stream.Collectors.toList;
 
 public class StreamFlatMapExample {
