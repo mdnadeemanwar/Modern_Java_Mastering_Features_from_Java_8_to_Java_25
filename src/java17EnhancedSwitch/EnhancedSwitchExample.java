@@ -30,8 +30,23 @@ public class EnhancedSwitchExample {
         return noOfDays;
     }
 
+    public static int withEnhancedSwitch(Month month, int year) {
+        int noOfDays = 0;
+
+        switch (month) {
+            case SEPTEMBER, APRIL, JUNE, NOVEMBER -> noOfDays = 29;
+            case FEBRUARY -> noOfDays = Year.isLeap(year) ? 29 : 28;
+            default -> noOfDays = 31;
+        }
+        return noOfDays;
+
+    }
+
     public static void main(String[] args) {
-        System.out.println("EnhancedSwitch Example");
+        System.out.println("With Normal Switch Example");
         System.out.println(getInDays(Month.FEBRUARY, 1900));
+
+        System.out.println("EnhancedSwitch Example");
+        System.out.println(withEnhancedSwitch(Month.FEBRUARY, 1900));
     }
 }
