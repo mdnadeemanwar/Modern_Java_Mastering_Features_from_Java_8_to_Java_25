@@ -41,6 +41,21 @@ public class EnhancedSwitchExample {
         return noOfDays;
 
     }
+    public static int withEnhancedSwitchWithYield(Month month, int year) {
+        int noOfDays = 0;
+
+        switch (month) {
+            case SEPTEMBER, APRIL, JUNE, NOVEMBER -> noOfDays = 29;
+            case FEBRUARY -> {
+                //you can write the multiple statement here
+                System.out.println("checking is " + year + " is leap");
+                noOfDays = Year.isLeap(year) ? 29 : 28;
+            }
+            default -> noOfDays = 31;
+        }
+        return noOfDays;
+
+    }
 
     public static void main(String[] args) {
         System.out.println("With Normal Switch Example");
@@ -48,5 +63,8 @@ public class EnhancedSwitchExample {
 
         System.out.println("EnhancedSwitch Example");
         System.out.println(withEnhancedSwitch(Month.FEBRUARY, 1900));
+
+        System.out.println("EnhancedSwitchYield Example");
+        System.out.println(withEnhancedSwitchWithYield(Month.FEBRUARY, 1900));
     }
 }
