@@ -1,18 +1,96 @@
+//package java17RecordClasses;
+//
+//import org.testng.annotations.Test;
+//
+//import java.math.BigDecimal;
+//
+//import static org.testng.Assert.assertThrows;
+//import static org.testng.AssertJUnit.assertEquals;
+//
+//public class ProductTest {
+//
+//    @Test
+//    public void createProduct() {
+//        var product = new Product("iphone", new BigDecimal("999.99"), "Electronics");
+//        assertEquals("iphone", product.name());
+//        assertEquals("Electronics", product.type());
+//        System.out.println(product.toString());
+//    }
+//
+//    @Test
+//    public void createProductNameNotValid() {
+//        var exception = assertThrows(IllegalArgumentException.class, () ->
+//                new Product("", new BigDecimal("999.99"), "Electronics"));
+//        assertEquals("name is not valid", exception.getMessage("name is not valid here"));
+//    }
+//    @Test
+//    public void createProductCostNotValid() {
+//        var exception = assertThrows(IllegalArgumentException.class, () ->
+//                new Product("iphone", new BigDecimal("-999.99"), "Electronics"));
+//        assertEquals("name is not valid", exception.getMessage("cost is not valid here"));
+//    }
+//
+//    }
+//}
+
+
 package java17RecordClasses;
 
+import org.testng.annotations.Test;
+
 import java.math.BigDecimal;
+
+import static org.testng.Assert.assertThrows;
+import static org.testng.AssertJUnit.assertEquals;
 
 public class ProductTest {
 
     @Test
-    void createProduct(){
+    public void createProduct() {
+        var product =
+                new Product(
+                        "iphone",
+                        new BigDecimal("999.99"),
+                        "Electronics"
+                );
+        assertEquals("iphone", product.name());
+        assertEquals("Electronics", product.type());
+        System.out.println(product);
+    }
 
-        var product = new Product("iphone", new BigDecimal("999.99"),"Electronics");
+    @Test
+    public void createProductNameNotValid() {
+        var exception =
+                assertThrows(
+                        IllegalArgumentException.class,
+                        () -> new Product(
+                                "",
+                                new BigDecimal("999.99"),
+                                "Electronics"
+                        )
+                );
+        assertEquals(
+                "Name is not valid",
+                exception.getMessage()
+        );
+    }
 
-        assertEquals("iphone",product.name());
-        assertEquals("Electronics",product.type());
+    @Test
+    public void createProductCostNotValid() {
 
-        System.out.println(product.toString());
+        var exception =
+                assertThrows(
+                        IllegalArgumentException.class,
+                        () -> new Product(
+                                "iphone",
+                                new BigDecimal("-999.99"),
+                                "Electronics"
+                        )
+                );
 
+        assertEquals(
+                "Cost should be greater than 0",
+                exception.getMessage()
+        );
     }
 }
