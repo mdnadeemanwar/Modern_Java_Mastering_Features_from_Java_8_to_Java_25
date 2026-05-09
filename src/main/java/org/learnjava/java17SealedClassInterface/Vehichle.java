@@ -1,5 +1,7 @@
 package org.learnjava.java17SealedClassInterface;
 
-public  sealed class Vehichle permits Bus , Truck {
+public  sealed abstract class Vehichle permits Bus, Car, Truck {
+
+    public abstract String drive();
 
 }

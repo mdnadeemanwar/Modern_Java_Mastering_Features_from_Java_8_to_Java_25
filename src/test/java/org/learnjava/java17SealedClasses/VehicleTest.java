@@ -96,6 +96,7 @@ package org.learnjava.java17SealedClasses;
 
 import org.learnjava.java17RecordClasses.Product;
 import org.learnjava.java17SealedClassInterface.Bus;
+import org.learnjava.java17SealedClassInterface.Car;
 import org.learnjava.java17SealedClassInterface.Truck;
 import org.testng.annotations.Test;
 
@@ -115,6 +116,18 @@ public class VehicleTest {
         assertInstanceOf(Truck.class, truck);
 
 
+    }
+
+
+    @Test
+    public void driveTest() {
+        var bus = new Bus();
+        var truck = new Truck();
+        var car = new Car();
+
+        assertEquals ("BUS", bus.drive());
+        assertEquals ("TRUCK", truck.drive());
+        assertEquals ("CAR", car.drive());
     }
 
 }
