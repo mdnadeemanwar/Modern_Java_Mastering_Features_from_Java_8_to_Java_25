@@ -1,4 +1,8 @@
 package org.learnjava.java17SealedClassInterface;
 
-public final class Bus extends Vehichle{
+public non-sealed class Bus extends Vehichle{
+    @Override
+    public String drive() {
+        return "BUS";
+    }
 }
