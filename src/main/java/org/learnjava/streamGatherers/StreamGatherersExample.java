@@ -4,8 +4,7 @@ import java.time.LocalDate;
 import java.util.List;
 import java.util.stream.Gatherer;
 
-import static java.util.stream.Gatherers.windowFixed;
-import static java.util.stream.Gatherers.windowSliding;
+import static java.util.stream.Gatherers.*;
 
 public class StreamGatherersExample {
     private static List<Movie> createSampleMovies() {
@@ -132,13 +131,43 @@ public class StreamGatherersExample {
         movies.stream()
                 .limit(5)
                 .gather(windowSliding(2))
-                .forEach(window->{
+                .forEach(window -> {
                     System.out.println("window sliding");
                     window.forEach(movie -> {
                         System.out.println(" - " + movie.title() + " (" + movie.getReleaseYear() + ")");
                     });
                 });
 
+    }
+
+    /*
+    widnow fold method
+     */
+    private static void demonstrateWindowFoldFunction(List<Movie> movies) {
+
+        System.out.println("Folding operations");
+
+        var totalDuration = movies.stream()
+                .gather(fold(() -> 0, (total, movie) ->
+                        total + movie.duration()
+                )).findFirst().orElse(0);
+        System.out.println("Total duration: " + totalDuration);
+
+        //now calculate the average
+        var averageDuration = movies
+                .stream()
+                .gather(fold(() -> 0, (total, movie) -> total + movie.duration()))
+                .findFirst()
+                .orElse(0) / movies.size();
+
+        System.out.println("Average duration: " + averageDuration);
+    }
+
+    private static void demonstrateScanFunction(List<Movie> movies) {
+        System.out.println("Scan operations");
+        movies.stream().gather(scan(() -> 0, (total, movie) -> total + movie.duration())).forEach(runningtotal -> {
+            System.out.println("running total: " + runningtotal);
+        });
     }
 
     public static void main(String[] args) {
@@ -154,5 +183,11 @@ public class StreamGatherersExample {
         demonstrateWindowFixedFunction(movies);
 
         demonstrateWindowSlidingFunction(movies);
+
+        demonstrateWindowFoldFunction(movies);
+
+        demonstrateScanFunction(movies);
     }
+
+
 }
