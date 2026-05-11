@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.stream.Gatherer;
 
 import static java.util.stream.Gatherers.windowFixed;
+import static java.util.stream.Gatherers.windowSliding;
 
 public class StreamGatherersExample {
     private static List<Movie> createSampleMovies() {
@@ -115,12 +116,29 @@ public class StreamGatherersExample {
      */
     private static void demonstrateWindowFixedFunction(List<Movie> movies) {
         movies.stream().gather(windowFixed(3)) // this is intermediate funciton with fixed widnow size
-                .forEach(window->{
+                .forEach(window -> {
                     System.out.println("window");
                     window.forEach(movie -> {
-                        System.out.println(" - "+movie.title() + " (" + movie.getReleaseYear() + ")");
+                        System.out.println(" - " + movie.title() + " (" + movie.getReleaseYear() + ")");
                     });
                 });
+    }
+
+    /*
+    window sliding example
+     */
+    private static void demonstrateWindowSlidingFunction(List<Movie> movies) {
+        System.out.println("Sliding Window");
+        movies.stream()
+                .limit(5)
+                .gather(windowSliding(2))
+                .forEach(window->{
+                    System.out.println("window sliding");
+                    window.forEach(movie -> {
+                        System.out.println(" - " + movie.title() + " (" + movie.getReleaseYear() + ")");
+                    });
+                });
+
     }
 
     public static void main(String[] args) {
@@ -134,5 +152,7 @@ public class StreamGatherersExample {
 
 
         demonstrateWindowFixedFunction(movies);
+
+        demonstrateWindowSlidingFunction(movies);
     }
 }
