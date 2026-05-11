@@ -2,6 +2,7 @@ package org.learnjava.streamGatherers;
 
 import java.time.LocalDate;
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Gatherer;
 
 import static java.util.stream.Gatherers.*;
@@ -170,6 +171,44 @@ public class StreamGatherersExample {
         });
     }
 
+//    private static void demonstratemapConcurrentFunction(List<Movie> movies) {
+//        System.out.println("Mapping concurrent operations");
+//        movies.stream().gather(Gatherer.mapConcurrent(
+//                2,
+//                movie -> {
+//                    try {
+//                        Thread.sleep(500);
+//                    } catch (InterruptedException e) {
+//                        Thread.currentThread().interrupt();
+//                    }
+//
+//                    return Map.entry(movie.title(),
+//                            "Processed" + movie);
+//                }
+//        )).forEach(result->{
+//            System.out.println("result: " + result);
+//        });
+//    }
+
+
+    private static void demonstratecompositeGatherers(List<Movie> movies) {
+        System.out.println("Composite Gatherers");
+        movies
+                .stream()
+                .filter(movie -> movie.rating() >= 8.0)
+                .gather(windowFixed(2))
+                .gather(scan(() -> 0.0, (acc, window) -> {
+                    double avgDuration = window
+                            .stream()
+                            .mapToDouble(movie -> movie.duration())
+                            .average()
+                            .orElse(0);
+                    return avgDuration ;
+                })).forEach(result -> {
+                    System.out.println("result: " + result);
+                });
+    }
+
     public static void main(String[] args) {
 
         System.out.println("Creating StreamGatherersExample");
@@ -187,6 +226,10 @@ public class StreamGatherersExample {
         demonstrateWindowFoldFunction(movies);
 
         demonstrateScanFunction(movies);
+
+//        demonstratemapConcurrentFunction(movies);
+
+        demonstratecompositeGatherers(movies);
     }
 
 
