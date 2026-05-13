@@ -1,0 +1,41 @@
+package org.learnjava.http2client;
+
+import java.io.IOException;
+import java.net.URI;
+import java.net.http.HttpClient;
+import java.net.http.HttpRequest;
+import java.net.http.HttpResponse;
+import java.time.Duration;
+
+public class HttpExample {
+
+
+    /*
+    first create a http client here
+     */
+
+    static HttpClient httpClient = HttpClient.newBuilder()
+            .connectTimeout(Duration.ofSeconds(2))
+            .version(HttpClient.Version.HTTP_2).build();
+    public static String jsonsampleApi = "https://jsonplaceholder.typicode.com/todos";
+    public static String jsonsampleApiByid = "https://jsonplaceholder.typicode.com/todos/1";
+
+    public static void getUserDetailsById(String jsonsampleApiByid) throws IOException, InterruptedException {
+
+        var request = requestBuilder(HttpExample.jsonsampleApiByid);
+        try {
+            var response = httpClient.send(request, HttpResponse.BodyHandlers.ofString());
+            System.out.println("Response of api is " + response.body());
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public static HttpRequest requestBuilder(String url) {
+        return HttpRequest.newBuilder().uri(URI.create(url)).GET().build();
+    }
+
+    public static void main(String[] args) throws IOException, InterruptedException {
+        getUserDetailsById(jsonsampleApiByid);
+    }
+}
